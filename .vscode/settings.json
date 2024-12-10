@@ -1,7 +1,9 @@
 {
     "files.associations": {
+        "*.dbclient-js": "javascript",
         "SLC2.C": "cpp",
         "SLC1.C": "cpp",
-        "SLC4.C": "cpp"
+        "SLC4.C": "cpp",
+        "SLC6.C": "cpp"
     }
 }
