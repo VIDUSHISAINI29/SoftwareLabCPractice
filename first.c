@@ -1,32 +1,28 @@
 #include<stdio.h>
-#include<conio.h>
-int findD(int a, int b, int c){
-    int D = 0 ;
-    D = (b*b) - (4*a*c);
-    return D;
-}
-void main(){
-    int a, b, c, D, root1, root2 ;
-    printf("Enter a , b, c");
-    scanf("%d %d %d", &a, &b, &c);
-    printf("a = %d ,b = %d, c = %d", a, b, c);
-    D = findD(a, b, c);
-    root1 = (D-b)/ 2*a;
-    root2 = (-b-D)/2*a;
-    switch (D > 0 ? 1 : (D < 0 ? -1 : 0))
-    {
-    case 1:
-        printf("have diff real roots \t root1 = %d, root2 = %d", root1, root2);
-        break;
-    case -1:
-        printf("have equal real roots \t root1 = %d, root2 = %d", root1, root2);
-        break;
-    case 0:
-        printf("have equal real roots \t root1 = %d, root2 = %d", root1, root2);
-        break;
-    
-    default:
-    printf("no roots");
-        break;
+#include<math.h>
+int main(){
+    int rows, i, j, k;
+    printf("Enter Number of Rows : ");
+    scanf("%d", &rows);
+
+    for(i = 1; i <= rows; i++){
+        for(j = 1; j <= (rows - i) ; j++){
+            printf(" ");
+        }
+        for(k = 1; k <= (i * 2 - 1) ; k++){
+            printf("%d", i);
+        }
+        printf("\n");
     }
+
+    //    for(i = 0; i <= rows; i++){
+    //     for(j = 1; j <= i ; j++){
+    //         printf(" ");
+    //     }
+    //     for(k = 1; k <= 2 * (rows - i) - 1 ; k++){
+    //         printf("%d",k);
+    //     }
+    //     printf("\n");
+    //     }
+
 }
