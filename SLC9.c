@@ -1,34 +1,34 @@
 #include<stdio.h>
 
-// # binary search program
+// # linear search program
 
-int binarySearch(int arr[], int size, int target){
-    int low = 0 , high = size - 1;
-    while(low <= high){
-        int mid = low + (high - low) / 2;
-        if(arr[mid] == target){
-     return mid;
+void linearSearch(int arr[], int n, int target){
+     
+    int found = 0;
+    for(int i = 0; i < n; i++){
+        if(arr[i] == target){
+            printf("element %d found at %d index", target, i);
+            found = 1;
+            break;
+        }
     }
-    if(arr[mid] < target){
-        low = mid + 1;
-    }
-    else{
-        low = mid - 1;
-    }
-    }
-    return -1;
-} 
-
-void main(){
-    int target, arr[] = {1, 2 , 3, 4, 5,6, 7, 8};
-    int size = sizeof(arr)/sizeof(arr[0]);
-    printf("Enter element to search : ");
-    scanf("%d", &target);
-    int result = binarySearch(arr, size, target);
-    if(result != -1){
-        printf("element %d found at %d index ", target, result);
-    }
-    else{
-        printf("Element not found in the list.");
+    if(!found){
+        printf("Element  %d is not in list.", target);
     }
 }
+int main(){
+    int n, target;
+    printf("Enter number of elements in array : ");
+    scanf("%d", &n);
+    int arr[n];
+    printf("Enter elements of array : ");
+    for(int i = 0; i < n; i++){
+        scanf("%d", &arr[i]);
+    }
+    printf("Enter element you want to search for : ");
+    scanf("%d", &target);
+    linearSearch(arr, n, target);
+    return 0;
+}
+
+
